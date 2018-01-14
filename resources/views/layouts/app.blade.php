@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Laravel') )</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -53,6 +53,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        @if (Voyager::canOrFail('browse_admin'))
+                                            <a href="/admin">
+                                                Admin
+                                            </a>
+                                        @endif
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
