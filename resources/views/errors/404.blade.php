@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    404
-@stop
+@section('title','Страница не найдена')
 
 @section('content')
     <div class="container">
