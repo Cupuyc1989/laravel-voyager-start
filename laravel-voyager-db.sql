@@ -157,34 +157,6 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Дамп данных таблицы blog.migrations: ~23 rows (приблизительно)
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-	(1, '2014_10_12_000000_create_users_table', 1),
-	(2, '2014_10_12_100000_create_password_resets_table', 1),
-	(3, '2016_01_01_000000_add_voyager_user_fields', 1),
-	(4, '2016_01_01_000000_create_data_types_table', 1),
-	(5, '2016_01_01_000000_create_pages_table', 1),
-	(6, '2016_01_01_000000_create_posts_table', 1),
-	(7, '2016_02_15_204651_create_categories_table', 1),
-	(8, '2016_05_19_173453_create_menu_table', 1),
-	(9, '2016_10_21_190000_create_roles_table', 1),
-	(10, '2016_10_21_190000_create_settings_table', 1),
-	(11, '2016_11_30_135954_create_permission_table', 1),
-	(12, '2016_11_30_141208_create_permission_role_table', 1),
-	(13, '2016_12_26_201236_data_types__add__server_side', 1),
-	(14, '2017_01_13_000000_add_route_to_menu_items_table', 1),
-	(15, '2017_01_14_005015_create_translations_table', 1),
-	(16, '2017_01_15_000000_add_permission_group_id_to_permissions_table', 1),
-	(17, '2017_01_15_000000_create_permission_groups_table', 1),
-	(18, '2017_01_15_000000_make_table_name_nullable_in_permissions_table', 1),
-	(19, '2017_03_06_000000_add_controller_to_data_types_table', 1),
-	(20, '2017_04_11_000000_alter_post_nullable_fields_table', 1),
-	(21, '2017_04_21_000000_add_order_to_data_rows_table', 1),
-	(22, '2017_07_05_210000_add_policyname_to_data_types_table', 1),
-	(23, '2017_08_05_000000_add_group_to_settings_table', 1);
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-
 -- Дамп структуры для таблица blog.pages
 CREATE TABLE IF NOT EXISTS `pages` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
