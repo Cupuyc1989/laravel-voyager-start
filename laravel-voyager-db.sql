@@ -362,9 +362,9 @@ CREATE TABLE IF NOT EXISTS `settings` (
 -- Дамп данных таблицы blog.settings: ~10 rows (приблизительно)
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
-	(1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site'),
-	(2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
-	(3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site'),
+	(1, 'site.title', 'Название сайта', 'Site Title', '', 'text', 1, 'Site'),
+	(2, 'site.description', 'Описание сайта', 'Site Description', '', 'text', 2, 'Site'),
+	(3, 'site.logo', 'Логотип', '', '', 'image', 3, 'Site'),
 	(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site'),
 	(5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
 	(6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin'),
