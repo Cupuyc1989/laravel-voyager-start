@@ -43,8 +43,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Войти</a></li>
+                            <li><a href="{{ route('register') }}">Зарегистрироваться</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -55,13 +55,13 @@
                                     <li>
                                         @if (Voyager::canOrFail('browse_admin'))
                                             <a href="/admin">
-                                                Admin
+                                                Админ. панель
                                             </a>
                                         @endif
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Выйти
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

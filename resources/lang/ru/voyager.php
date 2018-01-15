@@ -305,6 +305,31 @@ return [
         'url_slug'                  => 'URL Slug (должен быть уникальным)',
         'url_slug_ph'               => 'URL slug (например, posts)',
         'visibility'                => 'Видимость',
+        'relationship' => [
+            'relationship' => 'Отношение',
+            'browse' => 'Просмотр',
+            'read' => 'Считывание',
+            'edit' => 'Изменить',
+            'add' => 'Добавить',
+            'delete' => 'Удалить',
+            'open' => 'Открыть',
+            'close' => 'Закрыть',
+            'relationship_details' => 'детали',
+            'create' => 'Создать отношение',
+            'cancel' => 'Отменить',
+            'add_new' => 'Добавить',
+            'has_one' => 'HasOne',
+            'has_many' => 'HasMany',
+            'belongs_to' => 'BelongsTo',
+            'belongs_to_many' => 'BelongsToMany',
+            'namespace' => 'Namespace',
+            'which_column_from' => 'Колонка',
+            'is_used_to_reference' => 'для связи с',
+            'selection_details' => 'Детали',
+            'display_the' => 'Отображать',
+            'store_the' => 'Сохранять',
+            'pivot_table' => 'Таблица для связи'
+        ]
     ],
 
     'dimmer' => [

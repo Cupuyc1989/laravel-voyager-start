@@ -340,8 +340,9 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- Дамп данных таблицы blog.roles: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
-	(1, 'admin', 'Administrator', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
-	(2, 'user', 'Normal User', '2018-01-14 13:58:33', '2018-01-14 13:58:33');
+	(1, 'admin', 'Администратор', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
+	(2, 'user', 'Обычный пользователь', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
+	(3, 'content-manage', 'Контент менеджер', '2018-01-14 13:58:33', '2018-01-14 13:58:33');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
 -- Дамп структуры для таблица blog.settings
