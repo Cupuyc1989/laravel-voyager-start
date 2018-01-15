@@ -53,7 +53,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        @if (Voyager::canOrFail('browse_admin'))
+                                        @if (Auth::user()->role_id == 1)
                                             <a href="/admin">
                                                 Админ. панель
                                             </a>
