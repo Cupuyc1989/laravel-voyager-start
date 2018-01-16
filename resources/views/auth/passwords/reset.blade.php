@@ -10,8 +10,8 @@
                 <div class="panel-heading">Восстановить пароль</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+
+                    {!! Form::open(['url' => route('password.request'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
@@ -63,7 +63,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close !!}
                 </div>
             </div>
         </div>

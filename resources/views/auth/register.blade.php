@@ -10,8 +10,8 @@
                 <div class="panel-heading">Регистрация</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+
+                    {!! Form::open(['url' => route('register'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Имя</label>
@@ -70,7 +70,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

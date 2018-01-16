@@ -53,7 +53,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        @if (Auth::user()->role_id == 1)
+                                        @if (Auth::user()->isAdmin())
                                             <a href="/admin">
                                                 Админ. панель
                                             </a>
