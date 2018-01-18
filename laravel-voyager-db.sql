@@ -47,14 +47,14 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(24, 2, 'updated_at', 'timestamp', 'Время обновления', 0, 0, 0, 0, 0, 0, NULL, 11),
 	(25, 2, 'image', 'image', 'Изображение', 0, 1, 1, 1, 1, 1, NULL, 12),
 	(26, 3, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
-	(27, 3, 'name', 'text', 'Имя', 1, 1, 1, 1, 1, 1, '', 2),
-	(28, 3, 'email', 'text', 'E-Mail', 1, 1, 1, 1, 1, 1, '', 3),
-	(29, 3, 'password', 'password', 'Пароль', 0, 0, 0, 1, 1, 0, '', 4),
-	(30, 3, 'user_belongsto_role_relationship', 'relationship', 'Роль', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"name","pivot_table":"roles","pivot":"0"}', 10),
+	(27, 3, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '', 2),
+	(28, 3, 'email', 'text', 'email', 1, 1, 1, 1, 1, 1, '', 3),
+	(29, 3, 'password', 'password', 'password', 0, 0, 0, 1, 1, 0, '', 4),
+	(30, 3, 'user_belongsto_role_relationship', 'relationship', 'Role', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"name","pivot_table":"roles","pivot":"0"}', 10),
 	(31, 3, 'remember_token', 'text', 'remember_token', 0, 0, 0, 0, 0, 0, '', 5),
-	(32, 3, 'created_at', 'timestamp', 'Дата создания', 0, 1, 1, 0, 0, 0, '', 6),
+	(32, 3, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '', 6),
 	(33, 3, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 7),
-	(34, 3, 'avatar', 'image', 'Аватар', 0, 1, 1, 1, 1, 1, '', 8),
+	(34, 3, 'avatar', 'image', 'avatar', 0, 1, 1, 1, 1, 1, '', 8),
 	(35, 5, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
 	(36, 5, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '', 2),
 	(37, 5, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '', 3),
@@ -64,7 +64,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(48, 6, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, NULL, 3),
 	(49, 6, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, NULL, 4),
 	(50, 6, 'display_name', 'text', 'Отображаемое название', 1, 1, 1, 1, 1, 1, NULL, 5),
-	(53, 3, 'role_id', 'text', 'Роль', 1, 1, 1, 1, 1, 1, '', 9);
+	(53, 3, 'role_id', 'text', 'role_id', 1, 1, 1, 1, 1, 1, '', 9);
 /*!40000 ALTER TABLE `data_rows` ENABLE KEYS */;
 
 -- Дамп структуры для таблица blog.data_types
@@ -312,9 +312,8 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- Дамп данных таблицы blog.roles: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
-	(1, 'admin', 'Администратор', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
-	(2, 'user', 'Обычный пользователь', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
-	(3, 'content-manage', 'Контент менеджер', '2018-01-14 13:58:33', '2018-01-14 13:58:33');
+	(1, 'admin', 'Administrator', '2018-01-14 13:58:33', '2018-01-14 13:58:33'),
+	(2, 'user', 'Normal User', '2018-01-14 13:58:33', '2018-01-14 13:58:33');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
 -- Дамп структуры для таблица blog.settings
@@ -334,9 +333,9 @@ CREATE TABLE IF NOT EXISTS `settings` (
 -- Дамп данных таблицы blog.settings: ~10 rows (приблизительно)
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
-	(1, 'site.title', 'Название сайта', 'Site Title', '', 'text', 1, 'Site'),
-	(2, 'site.description', 'Описание сайта', 'Site Description', '', 'text', 2, 'Site'),
-	(3, 'site.logo', 'Логотип', '', '', 'image', 3, 'Site'),
+	(1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site'),
+	(2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
+	(3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site'),
 	(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site'),
 	(5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
 	(6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin'),
@@ -359,41 +358,6 @@ CREATE TABLE IF NOT EXISTS `translations` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `translations_table_name_column_name_foreign_key_locale_unique` (`table_name`,`column_name`,`foreign_key`,`locale`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Дамп данных таблицы blog.translations: ~30 rows (приблизительно)
-/*!40000 ALTER TABLE `translations` DISABLE KEYS */;
-INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
-	(1, 'data_types', 'display_name_singular', 1, 'pt', 'Post', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(2, 'data_types', 'display_name_singular', 2, 'pt', 'Página', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(3, 'data_types', 'display_name_singular', 3, 'pt', 'Utilizador', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(4, 'data_types', 'display_name_singular', 4, 'pt', 'Categoria', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(5, 'data_types', 'display_name_singular', 5, 'pt', 'Menu', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(6, 'data_types', 'display_name_singular', 6, 'pt', 'Função', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(7, 'data_types', 'display_name_plural', 1, 'pt', 'Posts', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(8, 'data_types', 'display_name_plural', 2, 'pt', 'Páginas', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(9, 'data_types', 'display_name_plural', 3, 'pt', 'Utilizadores', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(10, 'data_types', 'display_name_plural', 4, 'pt', 'Categorias', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(11, 'data_types', 'display_name_plural', 5, 'pt', 'Menus', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(12, 'data_types', 'display_name_plural', 6, 'pt', 'Funções', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(13, 'categories', 'slug', 1, 'pt', 'categoria-1', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(14, 'categories', 'name', 1, 'pt', 'Categoria 1', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(15, 'categories', 'slug', 2, 'pt', 'categoria-2', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(16, 'categories', 'name', 2, 'pt', 'Categoria 2', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(17, 'pages', 'title', 1, 'pt', 'Olá Mundo', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(18, 'pages', 'slug', 1, 'pt', 'ola-mundo', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(19, 'pages', 'body', 1, 'pt', '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\r\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(20, 'menu_items', 'title', 1, 'pt', 'Painel de Controle', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(21, 'menu_items', 'title', 2, 'pt', 'Media', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(22, 'menu_items', 'title', 3, 'pt', 'Publicações', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(23, 'menu_items', 'title', 4, 'pt', 'Utilizadores', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(24, 'menu_items', 'title', 5, 'pt', 'Categorias', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(25, 'menu_items', 'title', 6, 'pt', 'Páginas', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(26, 'menu_items', 'title', 7, 'pt', 'Funções', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(27, 'menu_items', 'title', 8, 'pt', 'Ferramentas', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(28, 'menu_items', 'title', 9, 'pt', 'Menus', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(29, 'menu_items', 'title', 10, 'pt', 'Base de dados', '2018-01-14 13:58:36', '2018-01-14 13:58:36'),
-	(30, 'menu_items', 'title', 13, 'pt', 'Configurações', '2018-01-14 13:58:36', '2018-01-14 13:58:36');
-/*!40000 ALTER TABLE `translations` ENABLE KEYS */;
 
 -- Дамп структуры для таблица blog.users
 CREATE TABLE IF NOT EXISTS `users` (

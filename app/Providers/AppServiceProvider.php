@@ -7,6 +7,13 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
+     * The application instance.
+     *
+     * @var \Illuminate\Foundation\Application
+     */
+    protected $app;
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -23,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	    if ($this->app->environment() !== 'production') {
-		    $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-	    }
-        //
+        if ($this->app->isLocal()) {
+            $localProviders = config('app.local_providers', []);
+            array_map([$this->app, 'register'], $localProviders);
+        }
     }
 }

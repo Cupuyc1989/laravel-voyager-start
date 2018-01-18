@@ -1,25 +1,36 @@
 {
-    "name": "laravel/laravel",
+    "name": "laravelrus/skeleton",
     "description": "The Laravel Framework.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "laravelrus"
     ],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "JhaoDa",
+            "email": "jhaoda@gmail.com"
+        },
+        {
+            "name": "atehnix",
+            "homepage": "https://vk.com/atehnix"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
-        "doctrine/dbal": "^2.5",
-        "laravel/framework": "5.4.*",
+        "barryvdh/laravel-debugbar": "~2",
+        "barryvdh/laravel-ide-helper": "~2",
+        "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.4.0",
+        "laravelcollective/html": "^5.5",
         "tcg/voyager": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7",
-        "barryvdh/laravel-ide-helper": "^2.4"
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "classmap": [
@@ -43,12 +54,12 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan ide-helper:run",
             "php artisan optimize"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan ide-helper:generate",
-            "php artisan ide-helper:meta",
+            "php artisan ide-helper:run",
             "php artisan optimize"
         ]
     },
