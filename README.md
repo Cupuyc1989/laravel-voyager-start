@@ -3,8 +3,6 @@
 
 ### Install
 
-First make storage folder writable.
-
 ``
 cp .env.example .env
 ``
