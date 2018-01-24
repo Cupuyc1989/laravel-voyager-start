@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.32 on 2018-01-18.
+ * Generated for Laravel 5.5.32 on 2018-01-24.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3261,98 +3261,6 @@ namespace Illuminate\Support\Facades {
          
     }
 
-    class Crypt {
-        
-        /**
-         * Determine if the given key and cipher combination is valid.
-         *
-         * @param string $key
-         * @param string $cipher
-         * @return bool 
-         * @static 
-         */ 
-        public static function supported($key, $cipher)
-        {
-            return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
-        }
-        
-        /**
-         * Create a new encryption key for the given cipher.
-         *
-         * @param string $cipher
-         * @return string 
-         * @static 
-         */ 
-        public static function generateKey($cipher)
-        {
-            return \Illuminate\Encryption\Encrypter::generateKey($cipher);
-        }
-        
-        /**
-         * Encrypt the given value.
-         *
-         * @param mixed $value
-         * @param bool $serialize
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encrypt($value, $serialize = true)
-        {
-            return \Illuminate\Encryption\Encrypter::encrypt($value, $serialize);
-        }
-        
-        /**
-         * Encrypt a string without serialization.
-         *
-         * @param string $value
-         * @return string 
-         * @static 
-         */ 
-        public static function encryptString($value)
-        {
-            return \Illuminate\Encryption\Encrypter::encryptString($value);
-        }
-        
-        /**
-         * Decrypt the given value.
-         *
-         * @param mixed $payload
-         * @param bool $unserialize
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decrypt($payload, $unserialize = true)
-        {
-            return \Illuminate\Encryption\Encrypter::decrypt($payload, $unserialize);
-        }
-        
-        /**
-         * Decrypt the given string without unserialization.
-         *
-         * @param string $payload
-         * @return string 
-         * @static 
-         */ 
-        public static function decryptString($payload)
-        {
-            return \Illuminate\Encryption\Encrypter::decryptString($payload);
-        }
-        
-        /**
-         * Get the encryption key.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getKey()
-        {
-            return \Illuminate\Encryption\Encrypter::getKey();
-        }
-         
-    }
-
     class DB {
         
         /**
@@ -3470,792 +3378,6 @@ namespace Illuminate\Support\Facades {
         public static function getConnections()
         {
             return \Illuminate\Database\DatabaseManager::getConnections();
-        }
-        
-        /**
-         * Get a schema builder instance for the connection.
-         *
-         * @return \Illuminate\Database\Schema\MySqlBuilder 
-         * @static 
-         */ 
-        public static function getSchemaBuilder()
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getSchemaBuilder();
-        }
-        
-        /**
-         * Bind values to their parameters in the given statement.
-         *
-         * @param \PDOStatement $statement
-         * @param array $bindings
-         * @return void 
-         * @static 
-         */ 
-        public static function bindValues($statement, $bindings)
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::bindValues($statement, $bindings);
-        }
-        
-        /**
-         * Set the query grammar to the default implementation.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function useDefaultQueryGrammar()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::useDefaultQueryGrammar();
-        }
-        
-        /**
-         * Set the schema grammar to the default implementation.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function useDefaultSchemaGrammar()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::useDefaultSchemaGrammar();
-        }
-        
-        /**
-         * Set the query post processor to the default implementation.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function useDefaultPostProcessor()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::useDefaultPostProcessor();
-        }
-        
-        /**
-         * Begin a fluent query against a database table.
-         *
-         * @param string $table
-         * @return \Illuminate\Database\Query\Builder 
-         * @static 
-         */ 
-        public static function table($table)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::table($table);
-        }
-        
-        /**
-         * Get a new query builder instance.
-         *
-         * @return \Illuminate\Database\Query\Builder 
-         * @static 
-         */ 
-        public static function query()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::query();
-        }
-        
-        /**
-         * Run a select statement and return a single result.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @param bool $useReadPdo
-         * @return mixed 
-         * @static 
-         */ 
-        public static function selectOne($query, $bindings = array(), $useReadPdo = true)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::selectOne($query, $bindings, $useReadPdo);
-        }
-        
-        /**
-         * Run a select statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return array 
-         * @static 
-         */ 
-        public static function selectFromWriteConnection($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::selectFromWriteConnection($query, $bindings);
-        }
-        
-        /**
-         * Run a select statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @param bool $useReadPdo
-         * @return array 
-         * @static 
-         */ 
-        public static function select($query, $bindings = array(), $useReadPdo = true)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::select($query, $bindings, $useReadPdo);
-        }
-        
-        /**
-         * Run a select statement against the database and returns a generator.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @param bool $useReadPdo
-         * @return \Generator 
-         * @static 
-         */ 
-        public static function cursor($query, $bindings = array(), $useReadPdo = true)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::cursor($query, $bindings, $useReadPdo);
-        }
-        
-        /**
-         * Run an insert statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return bool 
-         * @static 
-         */ 
-        public static function insert($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::insert($query, $bindings);
-        }
-        
-        /**
-         * Run an update statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return int 
-         * @static 
-         */ 
-        public static function update($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::update($query, $bindings);
-        }
-        
-        /**
-         * Run a delete statement against the database.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return int 
-         * @static 
-         */ 
-        public static function delete($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::delete($query, $bindings);
-        }
-        
-        /**
-         * Execute an SQL statement and return the boolean result.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return bool 
-         * @static 
-         */ 
-        public static function statement($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::statement($query, $bindings);
-        }
-        
-        /**
-         * Run an SQL statement and get the number of rows affected.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @return int 
-         * @static 
-         */ 
-        public static function affectingStatement($query, $bindings = array())
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::affectingStatement($query, $bindings);
-        }
-        
-        /**
-         * Run a raw, unprepared query against the PDO connection.
-         *
-         * @param string $query
-         * @return bool 
-         * @static 
-         */ 
-        public static function unprepared($query)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::unprepared($query);
-        }
-        
-        /**
-         * Execute the given callback in "dry run" mode.
-         *
-         * @param \Closure $callback
-         * @return array 
-         * @static 
-         */ 
-        public static function pretend($callback)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::pretend($callback);
-        }
-        
-        /**
-         * Prepare the query bindings for execution.
-         *
-         * @param array $bindings
-         * @return array 
-         * @static 
-         */ 
-        public static function prepareBindings($bindings)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::prepareBindings($bindings);
-        }
-        
-        /**
-         * Log a query in the connection's query log.
-         *
-         * @param string $query
-         * @param array $bindings
-         * @param float|null $time
-         * @return void 
-         * @static 
-         */ 
-        public static function logQuery($query, $bindings, $time = null)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::logQuery($query, $bindings, $time);
-        }
-        
-        /**
-         * Register a database query listener with the connection.
-         *
-         * @param \Closure $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function listen($callback)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::listen($callback);
-        }
-        
-        /**
-         * Get a new raw query expression.
-         *
-         * @param mixed $value
-         * @return \Illuminate\Database\Query\Expression 
-         * @static 
-         */ 
-        public static function raw($value)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::raw($value);
-        }
-        
-        /**
-         * Indicate if any records have been modified.
-         *
-         * @param bool $value
-         * @return void 
-         * @static 
-         */ 
-        public static function recordsHaveBeenModified($value = true)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::recordsHaveBeenModified($value);
-        }
-        
-        /**
-         * Is Doctrine available?
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function isDoctrineAvailable()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::isDoctrineAvailable();
-        }
-        
-        /**
-         * Get a Doctrine Schema Column instance.
-         *
-         * @param string $table
-         * @param string $column
-         * @return \Doctrine\DBAL\Schema\Column 
-         * @static 
-         */ 
-        public static function getDoctrineColumn($table, $column)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getDoctrineColumn($table, $column);
-        }
-        
-        /**
-         * Get the Doctrine DBAL schema manager for the connection.
-         *
-         * @return \Doctrine\DBAL\Schema\AbstractSchemaManager 
-         * @static 
-         */ 
-        public static function getDoctrineSchemaManager()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getDoctrineSchemaManager();
-        }
-        
-        /**
-         * Get the Doctrine DBAL database connection instance.
-         *
-         * @return \Doctrine\DBAL\Connection 
-         * @static 
-         */ 
-        public static function getDoctrineConnection()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getDoctrineConnection();
-        }
-        
-        /**
-         * Get the current PDO connection.
-         *
-         * @return \PDO 
-         * @static 
-         */ 
-        public static function getPdo()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getPdo();
-        }
-        
-        /**
-         * Get the current PDO connection used for reading.
-         *
-         * @return \PDO 
-         * @static 
-         */ 
-        public static function getReadPdo()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getReadPdo();
-        }
-        
-        /**
-         * Set the PDO connection.
-         *
-         * @param \PDO|\Closure|null $pdo
-         * @return $this 
-         * @static 
-         */ 
-        public static function setPdo($pdo)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::setPdo($pdo);
-        }
-        
-        /**
-         * Set the PDO connection used for reading.
-         *
-         * @param \PDO|\Closure|null $pdo
-         * @return $this 
-         * @static 
-         */ 
-        public static function setReadPdo($pdo)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::setReadPdo($pdo);
-        }
-        
-        /**
-         * Set the reconnect instance on the connection.
-         *
-         * @param callable $reconnector
-         * @return $this 
-         * @static 
-         */ 
-        public static function setReconnector($reconnector)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::setReconnector($reconnector);
-        }
-        
-        /**
-         * Get the database connection name.
-         *
-         * @return string|null 
-         * @static 
-         */ 
-        public static function getName()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getName();
-        }
-        
-        /**
-         * Get an option from the configuration options.
-         *
-         * @param string|null $option
-         * @return mixed 
-         * @static 
-         */ 
-        public static function getConfig($option = null)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getConfig($option);
-        }
-        
-        /**
-         * Get the PDO driver name.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDriverName()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getDriverName();
-        }
-        
-        /**
-         * Get the query grammar used by the connection.
-         *
-         * @return \Illuminate\Database\Query\Grammars\Grammar 
-         * @static 
-         */ 
-        public static function getQueryGrammar()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getQueryGrammar();
-        }
-        
-        /**
-         * Set the query grammar used by the connection.
-         *
-         * @param \Illuminate\Database\Query\Grammars\Grammar $grammar
-         * @return void 
-         * @static 
-         */ 
-        public static function setQueryGrammar($grammar)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::setQueryGrammar($grammar);
-        }
-        
-        /**
-         * Get the schema grammar used by the connection.
-         *
-         * @return \Illuminate\Database\Schema\Grammars\Grammar 
-         * @static 
-         */ 
-        public static function getSchemaGrammar()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getSchemaGrammar();
-        }
-        
-        /**
-         * Set the schema grammar used by the connection.
-         *
-         * @param \Illuminate\Database\Schema\Grammars\Grammar $grammar
-         * @return void 
-         * @static 
-         */ 
-        public static function setSchemaGrammar($grammar)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::setSchemaGrammar($grammar);
-        }
-        
-        /**
-         * Get the query post processor used by the connection.
-         *
-         * @return \Illuminate\Database\Query\Processors\Processor 
-         * @static 
-         */ 
-        public static function getPostProcessor()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getPostProcessor();
-        }
-        
-        /**
-         * Set the query post processor used by the connection.
-         *
-         * @param \Illuminate\Database\Query\Processors\Processor $processor
-         * @return void 
-         * @static 
-         */ 
-        public static function setPostProcessor($processor)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::setPostProcessor($processor);
-        }
-        
-        /**
-         * Get the event dispatcher used by the connection.
-         *
-         * @return \Illuminate\Contracts\Events\Dispatcher 
-         * @static 
-         */ 
-        public static function getEventDispatcher()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getEventDispatcher();
-        }
-        
-        /**
-         * Set the event dispatcher instance on the connection.
-         *
-         * @param \Illuminate\Contracts\Events\Dispatcher $events
-         * @return void 
-         * @static 
-         */ 
-        public static function setEventDispatcher($events)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::setEventDispatcher($events);
-        }
-        
-        /**
-         * Determine if the connection in a "dry run".
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function pretending()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::pretending();
-        }
-        
-        /**
-         * Get the connection query log.
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function getQueryLog()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getQueryLog();
-        }
-        
-        /**
-         * Clear the query log.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function flushQueryLog()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::flushQueryLog();
-        }
-        
-        /**
-         * Enable the query log on the connection.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function enableQueryLog()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::enableQueryLog();
-        }
-        
-        /**
-         * Disable the query log on the connection.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function disableQueryLog()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::disableQueryLog();
-        }
-        
-        /**
-         * Determine whether we're logging queries.
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function logging()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::logging();
-        }
-        
-        /**
-         * Get the name of the connected database.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDatabaseName()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getDatabaseName();
-        }
-        
-        /**
-         * Set the name of the connected database.
-         *
-         * @param string $database
-         * @return string 
-         * @static 
-         */ 
-        public static function setDatabaseName($database)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::setDatabaseName($database);
-        }
-        
-        /**
-         * Get the table prefix for the connection.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getTablePrefix()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getTablePrefix();
-        }
-        
-        /**
-         * Set the table prefix in use by the connection.
-         *
-         * @param string $prefix
-         * @return void 
-         * @static 
-         */ 
-        public static function setTablePrefix($prefix)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::setTablePrefix($prefix);
-        }
-        
-        /**
-         * Set the table prefix and return the grammar.
-         *
-         * @param \Illuminate\Database\Grammar $grammar
-         * @return \Illuminate\Database\Grammar 
-         * @static 
-         */ 
-        public static function withTablePrefix($grammar)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::withTablePrefix($grammar);
-        }
-        
-        /**
-         * Register a connection resolver.
-         *
-         * @param string $driver
-         * @param \Closure $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function resolverFor($driver, $callback)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::resolverFor($driver, $callback);
-        }
-        
-        /**
-         * Get the connection resolver for the given driver.
-         *
-         * @param string $driver
-         * @return mixed 
-         * @static 
-         */ 
-        public static function getResolver($driver)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::getResolver($driver);
-        }
-        
-        /**
-         * Execute a Closure within a transaction.
-         *
-         * @param \Closure $callback
-         * @param int $attempts
-         * @return mixed 
-         * @throws \Exception|\Throwable
-         * @static 
-         */ 
-        public static function transaction($callback, $attempts = 1)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::transaction($callback, $attempts);
-        }
-        
-        /**
-         * Start a new database transaction.
-         *
-         * @return void 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function beginTransaction()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::beginTransaction();
-        }
-        
-        /**
-         * Commit the active database transaction.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function commit()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::commit();
-        }
-        
-        /**
-         * Rollback the active database transaction.
-         *
-         * @param int|null $toLevel
-         * @return void 
-         * @static 
-         */ 
-        public static function rollBack($toLevel = null)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            \Larapack\DoctrineSupport\Connections\MySqlConnection::rollBack($toLevel);
-        }
-        
-        /**
-         * Get the number of active transactions.
-         *
-         * @return int 
-         * @static 
-         */ 
-        public static function transactionLevel()
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-            return \Larapack\DoctrineSupport\Connections\MySqlConnection::transactionLevel();
         }
          
     }
@@ -9677,230 +8799,6 @@ namespace Illuminate\Support\Facades {
          
     }
 
-    class Schema {
-        
-        /**
-         * Determine if the given table exists.
-         *
-         * @param string $table
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasTable($table)
-        {
-            return \Illuminate\Database\Schema\MySqlBuilder::hasTable($table);
-        }
-        
-        /**
-         * Get the column listing for a given table.
-         *
-         * @param string $table
-         * @return array 
-         * @static 
-         */ 
-        public static function getColumnListing($table)
-        {
-            return \Illuminate\Database\Schema\MySqlBuilder::getColumnListing($table);
-        }
-        
-        /**
-         * Drop all tables from the database.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function dropAllTables()
-        {
-            \Illuminate\Database\Schema\MySqlBuilder::dropAllTables();
-        }
-        
-        /**
-         * Set the default string length for migrations.
-         *
-         * @param int $length
-         * @return void 
-         * @static 
-         */ 
-        public static function defaultStringLength($length)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::defaultStringLength($length);
-        }
-        
-        /**
-         * Determine if the given table has a given column.
-         *
-         * @param string $table
-         * @param string $column
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasColumn($table, $column)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::hasColumn($table, $column);
-        }
-        
-        /**
-         * Determine if the given table has given columns.
-         *
-         * @param string $table
-         * @param array $columns
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasColumns($table, $columns)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::hasColumns($table, $columns);
-        }
-        
-        /**
-         * Get the data type for the given column name.
-         *
-         * @param string $table
-         * @param string $column
-         * @return string 
-         * @static 
-         */ 
-        public static function getColumnType($table, $column)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::getColumnType($table, $column);
-        }
-        
-        /**
-         * Modify a table on the schema.
-         *
-         * @param string $table
-         * @param \Closure $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function table($table, $callback)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::table($table, $callback);
-        }
-        
-        /**
-         * Create a new table on the schema.
-         *
-         * @param string $table
-         * @param \Closure $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function create($table, $callback)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::create($table, $callback);
-        }
-        
-        /**
-         * Drop a table from the schema.
-         *
-         * @param string $table
-         * @return void 
-         * @static 
-         */ 
-        public static function drop($table)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::drop($table);
-        }
-        
-        /**
-         * Drop a table from the schema if it exists.
-         *
-         * @param string $table
-         * @return void 
-         * @static 
-         */ 
-        public static function dropIfExists($table)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::dropIfExists($table);
-        }
-        
-        /**
-         * Rename a table on the schema.
-         *
-         * @param string $from
-         * @param string $to
-         * @return void 
-         * @static 
-         */ 
-        public static function rename($from, $to)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::rename($from, $to);
-        }
-        
-        /**
-         * Enable foreign key constraints.
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function enableForeignKeyConstraints()
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::enableForeignKeyConstraints();
-        }
-        
-        /**
-         * Disable foreign key constraints.
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function disableForeignKeyConstraints()
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::disableForeignKeyConstraints();
-        }
-        
-        /**
-         * Get the database connection instance.
-         *
-         * @return \Illuminate\Database\Connection 
-         * @static 
-         */ 
-        public static function getConnection()
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::getConnection();
-        }
-        
-        /**
-         * Set the database connection instance.
-         *
-         * @param \Illuminate\Database\Connection $connection
-         * @return $this 
-         * @static 
-         */ 
-        public static function setConnection($connection)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::setConnection($connection);
-        }
-        
-        /**
-         * Set the Schema Blueprint resolver callback.
-         *
-         * @param \Closure $resolver
-         * @return void 
-         * @static 
-         */ 
-        public static function blueprintResolver($resolver)
-        {
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::blueprintResolver($resolver);
-        }
-         
-    }
-
     class Session {
         
         /**
@@ -12281,152 +11179,6 @@ namespace Illuminate\Support\Facades {
  
 }
 
-namespace Arrilot\Widgets { 
-
-    class Facade {
-        
-        /**
-         * Run widget without magic method.
-         *
-         * @return mixed 
-         * @static 
-         */ 
-        public static function run()
-        {
-            return \Arrilot\Widgets\Factories\WidgetFactory::run();
-        }
-        
-        /**
-         * Encrypt widget params to be transported via HTTP.
-         *
-         * @param string $params
-         * @return string 
-         * @static 
-         */ 
-        public static function encryptWidgetParams($params)
-        {
-            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
-            return \Arrilot\Widgets\Factories\WidgetFactory::encryptWidgetParams($params);
-        }
-        
-        /**
-         * Decrypt widget params that were transported via HTTP.
-         *
-         * @param string $params
-         * @return string 
-         * @static 
-         */ 
-        public static function decryptWidgetParams($params)
-        {
-            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
-            return \Arrilot\Widgets\Factories\WidgetFactory::decryptWidgetParams($params);
-        }
-         
-    }
-
-    class AsyncFacade {
-        
-        /**
-         * Run widget without magic method.
-         *
-         * @return mixed 
-         * @static 
-         */ 
-        public static function run()
-        {
-            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::run();
-        }
-        
-        /**
-         * Encrypt widget params to be transported via HTTP.
-         *
-         * @param string $params
-         * @return string 
-         * @static 
-         */ 
-        public static function encryptWidgetParams($params)
-        {
-            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
-            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::encryptWidgetParams($params);
-        }
-        
-        /**
-         * Decrypt widget params that were transported via HTTP.
-         *
-         * @param string $params
-         * @return string 
-         * @static 
-         */ 
-        public static function decryptWidgetParams($params)
-        {
-            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
-            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::decryptWidgetParams($params);
-        }
-         
-    }
- 
-}
-
-namespace Intervention\Image\Facades { 
-
-    class Image {
-        
-        /**
-         * Overrides configuration settings
-         *
-         * @param array $config
-         * @static 
-         */ 
-        public static function configure($config = array())
-        {
-            return \Intervention\Image\ImageManager::configure($config);
-        }
-        
-        /**
-         * Initiates an Image instance from different input types
-         *
-         * @param mixed $data
-         * @return \Intervention\Image\Image 
-         * @static 
-         */ 
-        public static function make($data)
-        {
-            return \Intervention\Image\ImageManager::make($data);
-        }
-        
-        /**
-         * Creates an empty image canvas
-         *
-         * @param integer $width
-         * @param integer $height
-         * @param mixed $background
-         * @return \Intervention\Image\Image 
-         * @static 
-         */ 
-        public static function canvas($width, $height, $background = null)
-        {
-            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
-        }
-        
-        /**
-         * Create new cached image and run callback
-         * (requires additional package intervention/imagecache)
-         *
-         * @param \Closure $callback
-         * @param integer $lifetime
-         * @param boolean $returnObj
-         * @return \Image 
-         * @static 
-         */ 
-        public static function cache($callback, $lifetime = null, $returnObj = false)
-        {
-            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
-        }
-         
-    }
- 
-}
-
 namespace Collective\Html { 
 
     class FormFacade {
@@ -13451,6 +12203,152 @@ namespace Collective\Html {
  
 }
 
+namespace Intervention\Image\Facades { 
+
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */ 
+        public static function configure($config = array())
+        {
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+ 
+}
+
+namespace Arrilot\Widgets { 
+
+    class Facade {
+        
+        /**
+         * Run widget without magic method.
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function run()
+        {
+            return \Arrilot\Widgets\Factories\WidgetFactory::run();
+        }
+        
+        /**
+         * Encrypt widget params to be transported via HTTP.
+         *
+         * @param string $params
+         * @return string 
+         * @static 
+         */ 
+        public static function encryptWidgetParams($params)
+        {
+            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
+            return \Arrilot\Widgets\Factories\WidgetFactory::encryptWidgetParams($params);
+        }
+        
+        /**
+         * Decrypt widget params that were transported via HTTP.
+         *
+         * @param string $params
+         * @return string 
+         * @static 
+         */ 
+        public static function decryptWidgetParams($params)
+        {
+            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
+            return \Arrilot\Widgets\Factories\WidgetFactory::decryptWidgetParams($params);
+        }
+         
+    }
+
+    class AsyncFacade {
+        
+        /**
+         * Run widget without magic method.
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function run()
+        {
+            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::run();
+        }
+        
+        /**
+         * Encrypt widget params to be transported via HTTP.
+         *
+         * @param string $params
+         * @return string 
+         * @static 
+         */ 
+        public static function encryptWidgetParams($params)
+        {
+            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
+            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::encryptWidgetParams($params);
+        }
+        
+        /**
+         * Decrypt widget params that were transported via HTTP.
+         *
+         * @param string $params
+         * @return string 
+         * @static 
+         */ 
+        public static function decryptWidgetParams($params)
+        {
+            //Method inherited from \Arrilot\Widgets\Factories\AbstractWidgetFactory            
+            return \Arrilot\Widgets\Factories\AsyncWidgetFactory::decryptWidgetParams($params);
+        }
+         
+    }
+ 
+}
+
 namespace TCG\Voyager\Facades { 
 
     class Voyager {
@@ -13684,8 +12582,6 @@ namespace  {
     class Config extends \Illuminate\Support\Facades\Config {}
 
     class Cookie extends \Illuminate\Support\Facades\Cookie {}
-
-    class Crypt extends \Illuminate\Support\Facades\Crypt {}
 
     class DB extends \Illuminate\Support\Facades\DB {}
 
@@ -15765,8 +14661,6 @@ namespace  {
 
     class Route extends \Illuminate\Support\Facades\Route {}
 
-    class Schema extends \Illuminate\Support\Facades\Schema {}
-
     class Session extends \Illuminate\Support\Facades\Session {}
 
     class Storage extends \Illuminate\Support\Facades\Storage {}
@@ -15777,15 +14671,15 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
-    class Widget extends \Arrilot\Widgets\Facade {}
-
-    class AsyncWidget extends \Arrilot\Widgets\AsyncFacade {}
-
-    class Image extends \Intervention\Image\Facades\Image {}
-
     class Form extends \Collective\Html\FormFacade {}
 
     class Html extends \Collective\Html\HtmlFacade {}
+
+    class Image extends \Intervention\Image\Facades\Image {}
+
+    class Widget extends \Arrilot\Widgets\Facade {}
+
+    class AsyncWidget extends \Arrilot\Widgets\AsyncFacade {}
 
     class Voyager extends \TCG\Voyager\Facades\Voyager {}
  
