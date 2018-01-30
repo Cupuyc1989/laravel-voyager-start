@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    {{ $page->title }}
-@stop
+@section('title', $page->title)
 
 @section('content')
     <div class="container">
@@ -17,7 +15,7 @@
                     <div class="panel-body">
                         @if ($page->image)
                             <div class="image">
-                                <img src="{{ Voyager::image($page->image) }}" alt="{{ $page->title }}">
+                                <img style="max-width:100%; height: auto" src="{{ Voyager::image($page->image) }}" alt="{{ $page->title }}">
                             </div>
                             <hr>
                         @endif

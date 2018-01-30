@@ -8,6 +8,7 @@ Route::get('/home', function(){
 });
 Route::get('/', 'HomeController@index')->name('home');
 
+// your routes here
 
 Route::group(['prefix' => 'admin'], function () {
 	Voyager::routes();
@@ -18,4 +19,6 @@ Route::group(['prefix' => 'admin'], function () {
         });
     });
 });
-Route::get('{slug}','PagesController@show')->name('page');
+
+// page must be last
+Route::get('{slug}','PagesController@show')->name('page.show');
