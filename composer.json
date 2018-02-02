@@ -1,77 +1,82 @@
 {
-    "name": "laravelrus/skeleton",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel",
-        "laravelrus"
-    ],
-    "license": "MIT",
-    "type": "project",
-    "authors": [
-        {
-            "name": "JhaoDa",
-            "email": "jhaoda@gmail.com"
-        },
-        {
-            "name": "atehnix",
-            "homepage": "https://vk.com/atehnix"
-        }
-    ],
-    "require": {
-        "php": ">=5.6.4",
-        "barryvdh/laravel-debugbar": "~2",
-        "barryvdh/laravel-ide-helper": "~2",
-        "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.5",
-        "tcg/voyager": "^1.0"
+  "name": "Cupuyc1989/laravel-voyager-start-RUS",
+  "description": "start blank laravel+voyager+rus project Edit",
+  "keywords": [
+    "framework",
+    "laravel",
+    "voyager",
+    "laravelrus"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "JhaoDa",
+      "email": "jhaoda@gmail.com"
     },
-    "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+    {
+      "name": "atehnix",
+      "homepage": "https://vk.com/atehnix"
     },
-    "autoload": {
-        "classmap": [
-            "database"
-        ],
-        "psr-4": {
-            "App\\": "app/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan key:generate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan ide-helper:run",
-            "php artisan optimize"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan ide-helper:run",
-            "php artisan optimize"
-        ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
-    },
-    "repositories": {
-        "hooks": {
-            "type": "composer",
-            "url": "https://larapack.io"
-        }
+    {
+      "name": "Pavel Makhonin",
+      "homepage": "https://vk.com/cupuyc1989"
     }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "barryvdh/laravel-debugbar": "~2",
+    "barryvdh/laravel-ide-helper": "~2",
+    "laravel/framework": "5.5.*",
+    "laravel/tinker": "~1.0",
+    "laravelcollective/html": "^5.5",
+    "tcg/voyager": "^1.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~5.7"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "php artisan key:generate"
+    ],
+    "post-install-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postInstall",
+      "php artisan ide-helper:run",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "php artisan ide-helper:run",
+      "php artisan optimize"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "repositories": {
+    "hooks": {
+      "type": "composer",
+      "url": "https://larapack.io"
+    }
+  }
 }
