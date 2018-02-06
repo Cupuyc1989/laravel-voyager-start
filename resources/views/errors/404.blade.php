@@ -14,7 +14,7 @@
                     </div>
                     <div class="panel-body">
                         <p>Запрашиваемая вами страница не найдена</p>
-                        <a href="{{ route('home') }}" class="btn btn-primary">Вернуться на главную страницу</a>
+                        <a href="{{ rroute('home') }}" class="btn btn-primary">Вернуться на главную страницу</a>
                     </div>
                 </div>
             </div>

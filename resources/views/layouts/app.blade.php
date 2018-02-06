@@ -47,8 +47,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Войти</a></li>
-                            <li><a href="{{ route('register') }}">Зарегистрироваться</a></li>
+                            <li><a href="{{ rroute('login') }}">Войти</a></li>
+                            <li><a href="{{ rroute('register') }}">Зарегистрироваться</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -62,13 +62,13 @@
                                                 Админ. панель
                                             </a>
                                         @endif
-                                        <a href="{{ route('logout') }}"
+                                        <a href="{{ rroute('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Выйти
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ rroute('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

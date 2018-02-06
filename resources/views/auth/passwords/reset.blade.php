@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
 
-                    {!! Form::open(['url' => route('password.request'), 'method'=>'POST','class'=>'form-horizontal']) !!}
+                    {!! Form::open(['url' => rroute('password.request'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <input type="hidden" name="token" value="{{ $token }}">
 

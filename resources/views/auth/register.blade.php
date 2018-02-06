@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
 
-                    {!! Form::open(['url' => route('register'), 'method'=>'POST','class'=>'form-horizontal']) !!}
+                    {!! Form::open(['url' => rroute('register'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Имя</label>

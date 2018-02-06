@@ -10,7 +10,7 @@
                 <div class="panel-heading">Авторизация</div>
 
                 <div class="panel-body">
-                    {!! Form::open(['url' => route('login'), 'method'=>'POST','class'=>'form-horizontal']) !!}
+                    {!! Form::open(['url' => rroute('login'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
@@ -56,7 +56,7 @@
                                     Авторизоваться
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="{{ rroute('password.request') }}">
                                     Забыли пароль?
                                 </a>
                             </div>

@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => route('password.email'), 'method'=>'POST','class'=>'form-horizontal']) !!}
+                    {!! Form::open(['url' => rroute('password.email'), 'method'=>'POST','class'=>'form-horizontal']) !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
